@@ -1,0 +1,57 @@
+*.font:JetBrainsMono:size=11:style=bold
+
+urxvt.font: xft:JetBrainsMono:size=11:style=medium
+
+urxvt.boldFont: xft:JetBrainsMono:size=11:style=bold
+urxvt.italic: xft:JetBrainsMono:size=11:style=mediumitalic
+
+/* colors */
+#include "/home/lpy/.themes/papyrus"
+
+Xft.dpi: 110
+Xft.autohint: 1
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+uxxvt.letterSpace: 0
+urxvt.lineSpace: 0
+urxvt.geometry: 75x28
+urxvt.internalBorder: 40
+urxvt.intensityStyles: False
+urxvt.scrollBar: False
+urxvt.cursorBlink: True
+urxvt.cursorUnderline: True
+URxvt.perl-ext-common: default,clipboard
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-v: eval:paste_clipboard
+URxvt.keysym.M-c: eval:selection_to_clipboard
+
+*foreground:   base05
+*background:   base00
+*cursorColor:  base03
+
+dmenu.selbackground: base00
+dmenu.selforeground: base0B
+dmenu.foreground: base03
+
+*color0: base00
+*color1: base08
+*color2: base0B
+*color3: base0A
+*color4: base0D
+*color5: base0E
+*color6: base0C
+*color7: base05
+
+*color8:  base03
+*color9:  base09
+*color10: base01
+*color11: base02
+*color12: base04
+*color13: base06
+*color14: base0F
+*color15: base07

@@ -1,0 +1,51 @@
+set altformat_current= %F 
+set altformat_playlist= %f%= %d 
+set altformat_title=%f
+set altformat_trackwin= %f%=%d
+set color_cmdline_attr=default
+set color_cmdline_bg=black
+set color_cmdline_fg=gray
+set color_cur_sel_attr=default
+set color_error=lightred
+set color_info=lightyellow
+set color_separator=0
+set color_statusline_attr=default
+set color_statusline_bg=black
+set color_statusline_fg=green
+set color_titleline_attr=default
+set color_titleline_bg=black
+set color_titleline_fg=gray
+set color_trackwin_album_attr=bold
+set color_trackwin_album_bg=default
+set color_trackwin_album_fg=default
+set color_win_attr=default
+set color_win_bg=default
+set color_win_cur=green
+set color_win_cur_attr=default
+set color_win_cur_sel_attr=default
+set color_win_cur_sel_bg=black
+set color_win_cur_sel_fg=green
+set color_win_dir=243
+set color_win_fg=244
+set color_win_inactive_cur_sel_attr=default
+set color_win_inactive_cur_sel_bg=black
+set color_win_inactive_cur_sel_fg=magenta
+set color_win_inactive_sel_attr=default
+set color_win_inactive_sel_bg=black
+set color_win_inactive_sel_fg=magenta
+set color_win_sel_attr=default
+set color_win_sel_bg=black
+set color_win_sel_fg=green
+set color_win_title_attr=bold
+set color_win_title_bg=black
+set color_win_title_fg=black
+set format_current=%-22%a %= %l
+set format_playlist=%-22%A %t%=
+set format_playlist_va=%A %t%=
+set format_statusline=%{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}%= %t
+set format_title=%a%=
+set format_trackwin= • %t%=
+set format_trackwin_album= %l 
+set format_trackwin_va= • %t (%a)%=
+set format_treewin= • %l
+set format_treewin_artist=%a

@@ -1,0 +1,24 @@
+# xbps
+alias pi='doas xbps-install -S'
+alias pd='doas xbps-remove -R'
+alias pq='xbps-query -R -s'
+alias pqi='xbps-query -l'
+alias pu='doas xbps-install -Su'
+
+# programs
+alias z=zathura
+alias n=newsboat
+alias svi=sudoedit
+alias colo='pastel color'
+alias bc='bc -l ~/.ext.bc'
+
+# fm
+alias ls='ls --color=auto'
+alias cd='cdl'
+
+# power
+alias poweroff='doas poweroff'
+alias reboot='doas reboot'
+
+# misc
+alias ivc='nvim ~/.config/nvim/init.vim'

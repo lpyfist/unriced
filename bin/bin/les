@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# lol
+
+base="/home/lpy/docs"
+out="$(find "$base/$1" | sort | dmenu -l 15)"
+
+[ -z "$out" ] || zathura "$out"

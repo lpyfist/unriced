@@ -1,0 +1,94 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+    urxvtc
+
+# program launcher
+super + d
+    dmenu_run -l 15
+
+# info script
+super +i
+    /home/lpy/bin/inf
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + w
+    firefox
+
+super + {plus,minus,t}
+    amixer set Master {5%+,5%-,toggle}
+
+super + 0
+    /home/lpy/bin/lock
+
+super + @space
+    herbe "$(<docs/misc/todo)"
+
+# cmus binds
+
+# toggle pause, {previous, next} track
+super + {S,P,N}
+    cmus-remote -{u,r,n}
+
+# seek
+super + bracket{left,right}
+    cmus-remote -k {-,+}10
+
+# dismiss notifications
+super + shift + @space
+    pkill -SIGUSR1 herbe
+
+#
+# berry hotkeys
+#
+
+super + {h, j, k, l}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+super + shift +  {h, j, k, l}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + {1-9}
+    berryc switch_workspace {0-9}
+
+super + shift + {1-9}
+    berryc send_to_workspace {0-9}
+
+super + m
+    berryc window_monocle
+
+super + f
+    berryc fullscreen
+
+super +  p
+    berryc snap_right
+
+super + o
+    berryc snap_left
+
+super + n
+    berryc toggle_decorations
+
+super + Tab
+    berryc cycle_focus
+
+super + q
+    berryc window_close
+
+super + shift + r
+    /home/lpy/.config/berry/autostart
+
+super + c
+    berryc window_center
+
+~button1
+    berryc pointer_focus
+
+super + shift + x
+    berryc quit

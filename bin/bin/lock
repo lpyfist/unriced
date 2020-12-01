@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# aaaa 
+
+scr="/tmp/lock.png"
+
+maim -u "$scr" && 
+    convert -scale 10% -sample 1000% "$scr" "$scr"
+
+i3lock -ui "$scr"

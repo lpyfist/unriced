@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# info pop-up
+
+# power
+dir="/sys/class/power_supply/BAT0"
+bat="$(cat "$dir"/capacity)"
+sta="$(cat "$dir"/status)"
+
+# volume
+vol="$(amixer sget Master | 
+    tail -n 1 | awk '{print $5}' | tr -d "[:punct:]")%"
+
+mu="$(amixer sget Master | 
+    tail -n 1 | awk '{print $6}' | tr -d "[:punct:]")"
+
+[ "$mu" = off ] && vol="muted"
+
+. /home/lpy/bin/np
+
+herbe \
+    "> bat: $bat%, $sta" " " \
+    "> $(date +%a,\ %d\ %b)" " " \
+    "> volume: $vol" \ " " \
+    "> $artist - $title ($pos_pre:$pos_suf / $dur_pre:$dur_suf)"

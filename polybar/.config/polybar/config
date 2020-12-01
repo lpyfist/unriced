@@ -1,0 +1,117 @@
+[colors]
+background = ${xrdb:color0}
+foreground = ${xrdb:color7}
+dim = ${xrdb:color10}
+primary = ${xrdb:color2}
+secondary = ${xrdb:color2}
+alert = ${xrdb:color1}
+
+[bar/1]
+bottom   = false
+width    = 24.5%
+height   = 40
+offset-x = 37.75%
+offset-y = 0%
+radius   = 7
+fixed-center = true
+module-margin = 15
+
+background =  ${colors.background}
+foreground =  ${colors.foreground}
+
+border-size = 0
+border-color = ${colors.dim}
+
+padding-left = 2
+padding-right= 3
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = FantasqueSans Mono :size=14
+font-1 = sf pro display:size=13:style=regular
+
+modules-left = time ewmh
+
+
+[module/wireless]
+type = internal/network
+interface = wlo1
+format-connected = 
+format-disconnected = 
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+
+format = <label-state>
+
+label-active = ×
+label-active-foreground = ${colors.primary}
+label-active-background = ${colors.background}
+label-active-padding = 1
+
+label-empty = •
+label-empty-foreground = ${xrdb:color10}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+label-urgent = ~
+label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 1
+
+label-occupied = •
+label-occupied-foreground = ${xrdb:color8}
+label-occupied-background = ${colors.background}
+label-occupied-padding = 1
+
+[module/time]
+type = internal/date
+time = "%I:%M %{F#aaaaaa} %p"
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding = 1
+label-font = 2
+date = "%a %d/%m"
+label = %time%
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 4
+
+format-charging = <animation-charging> <label-charging>
+format-discharging  = <ramp-capacity> <label-discharging>
+
+label-charging =
+label-discharging =
+label-full = 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 1000
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <ramp-volume>
+label-muted = 婢
+label-muted-foreground = ${colors.dim}
+
+ramp-volume-0 = 
+ramp-volume-1 = 墳
+ramp-volume-2 = 
+
+; vim:ft=dosini
