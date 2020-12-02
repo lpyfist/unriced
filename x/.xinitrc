@@ -8,7 +8,6 @@ setxkbmap -option compose:rctrl
 # xsetroot -cursor_name left_ptr
 sxhkd -c "$HOME/.config/berry/sxhkdrc" &
 ~/.fehbg &
-picom &
 
 urxvtd -q -o &
 

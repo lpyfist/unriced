@@ -12,14 +12,14 @@ width    = 24.5%
 height   = 40
 offset-x = 37.75%
 offset-y = 0%
-radius   = 7
+radius   = 0
 fixed-center = true
 module-margin = 15
 
 background =  ${colors.background}
 foreground =  ${colors.foreground}
 
-border-size = 0
+border-size = 1
 border-color = ${colors.dim}
 
 padding-left = 2

@@ -2,12 +2,10 @@
 #
 # info pop-up
 
-# power
 dir="/sys/class/power_supply/BAT0"
 bat="$(cat "$dir"/capacity)"
 sta="$(cat "$dir"/status)"
 
-# volume
 vol="$(amixer sget Master | 
     tail -n 1 | awk '{print $5}' | tr -d "[:punct:]")%"
 
@@ -22,4 +20,4 @@ herbe \
     "> bat: $bat%, $sta" " " \
     "> $(date +%a,\ %d\ %b)" " " \
     "> volume: $vol" \ " " \
-    "> $artist - $title ($pos_pre:$pos_suf / $dur_pre:$dur_suf)"
+    "$npstr"

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# now playing w/ bad timestamping; sourced in ./inf
+# now playing w/ bad timestamping, sourced in ./inf
 
 title="$(cmus-remote -Q | grep -w '^tag title')"
 title="${title##*title }"
@@ -8,17 +8,24 @@ title="${title##*title }"
 artist="$(cmus-remote -Q | grep -w '^tag artist')"
 artist="${artist##*artist }"
 
+stat="$(cmus-remote -Q | grep -w '^status' | awk '{print $2}')"
+
+
 pad() {
     i="$1"
     [ "$i" -lt 10 ] && i="0$i"
     printf '%s' "$i"
 }
 
-pos="$(cmus-remote -Q | grep '^position' | awk '{print $2}')"
 dur="$(cmus-remote -Q | grep '^duration' | awk '{print $2}')"
+pos="$(( dur - $(cmus-remote -Q | grep '^position' | awk '{print $2}') ))"
 
 pos_suf=$(pad $(( pos % 60 )))
-pos_pre=$(pad $(( pos / 60 )))
+pos_pre="-"$(pad $(( pos / 60 )))
 
 dur_suf=$(pad $(( dur % 60 )))
 dur_pre=$(pad $(( dur / 60 )))
+
+npstr="$artist - $title ($pos_pre:$pos_suf / $dur_pre:$dur_suf)"
+
+[ "$stat" = paused ] && npstr="| $npstr" || npstr="> $npstr"
