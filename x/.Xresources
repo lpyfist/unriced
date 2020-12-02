@@ -1,4 +1,4 @@
-*.font:JetBrainsMono:size=11:style=bold
+*.font:JetBrainsMono:size=11
 
 urxvt.font: xft:JetBrainsMono:size=11:style=medium
 

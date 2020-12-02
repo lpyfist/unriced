@@ -14,10 +14,10 @@ mu="$(amixer sget Master |
 
 [ "$mu" = off ] && vol="muted"
 
-. /home/lpy/bin/np
+pgrep -x cmus &&  . /home/lpy/bin/np
 
 herbe \
     "> bat: $bat%, $sta" " " \
     "> $(date +%a,\ %d\ %b)" " " \
-    "> volume: $vol" \ " " \
+    "> volume: $vol" " " \
     "$npstr"

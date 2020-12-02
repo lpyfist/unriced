@@ -18,14 +18,16 @@ pad() {
 }
 
 dur="$(cmus-remote -Q | grep '^duration' | awk '{print $2}')"
-pos="$(( dur - $(cmus-remote -Q | grep '^position' | awk '{print $2}') ))"
+
+[ $stat != stopped ] &&
+    pos="$(( dur - $(cmus-remote -Q | grep '^position' | awk '{print $2}') ))"
 
 pos_suf=$(pad $(( pos % 60 )))
-pos_pre="-"$(pad $(( pos / 60 )))
+pos_pre=$(pad $(( pos / 60 )))
 
 dur_suf=$(pad $(( dur % 60 )))
 dur_pre=$(pad $(( dur / 60 )))
 
-npstr="$artist - $title ($pos_pre:$pos_suf / $dur_pre:$dur_suf)"
+npstr="$artist - $title ("-"$pos_pre:$pos_suf / $dur_pre:$dur_suf)"
 
 [ "$stat" = paused ] && npstr="| $npstr" || npstr="> $npstr"
