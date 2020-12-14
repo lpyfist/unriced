@@ -4,7 +4,7 @@
 ## Tools
 - wm: [berry](https://github.com/jlervin/berry)
 - multiplexer: [tmux](https://github.com/tmux/tmux)
-- terminal emulator: [URxvt](https://linux.die.net/man/1/urxvt)
+- terminal emulator: [st](https://st.suckless.org)
 - shell: [bash](https://www.gnu.org/software/bash/)
 - editor: [neovim](https://neovim.io)
 - image viewer: [feh](https://feh.finalrewind.org/)
