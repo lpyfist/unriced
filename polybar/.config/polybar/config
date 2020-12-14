@@ -51,7 +51,7 @@ label-active-foreground = ${colors.primary}
 label-active-background = ${colors.background}
 label-active-padding = 1
 
-label-empty = •
+label-empty = ·
 label-empty-foreground = ${xrdb:color10}
 label-empty-background = ${colors.background}
 label-empty-padding = 1
@@ -61,14 +61,14 @@ label-urgent-foreground = ${colors.alert}
 label-urgent-background = ${colors.background}
 label-urgent-padding = 1
 
-label-occupied = •
+label-occupied = -
 label-occupied-foreground = ${xrdb:color8}
 label-occupied-background = ${colors.background}
 label-occupied-padding = 1
 
 [module/time]
 type = internal/date
-time = "%I:%M %{F#aaaaaa} %p"
+time = "%I:%M %{F#808080} %p"
 label-background = ${colors.background}
 label-foreground = ${colors.foreground}
 label-padding = 1

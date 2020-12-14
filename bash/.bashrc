@@ -40,3 +40,4 @@ export PF_COL2=7
 export PF_COL3=2
 
 [ -f /home/lpy/.aliases ] && . /home/lpy/.aliases
+[ -f /home/lpy/.profile ] && . /home/lpy/.profile

@@ -1,12 +1,13 @@
-*.font:JetBrainsMono:size=11
+*.font:fantasque sans mono:size=11.6:style=regular
+emacs.font: fantasque sans mono:size=18:style=regular
 
-urxvt.font: xft:JetBrainsMono:size=11:style=medium
+urxvt.font: xft:fantasque sans mono:size=12.1:style=regular
 
-urxvt.boldFont: xft:JetBrainsMono:size=11:style=bold
-urxvt.italic: xft:JetBrainsMono:size=11:style=mediumitalic
+urxvt.boldFont: xft:fantasque sans mono:size=12.1:style=bold
+urxvt.italic: xft:fantasque sans mono:size=12.1:style=italic
 
 /* colors */
-#include "/home/lpy/.themes/papyrus"
+#include "/home/lpy/.themes/lpy"
 
 Xft.dpi: 110
 Xft.autohint: 1
@@ -18,7 +19,7 @@ Xft.lcdfilter: lcddefault
 
 uxxvt.letterSpace: 0
 urxvt.lineSpace: 0
-urxvt.geometry: 75x28
+urxvt.geometry: 70x25
 urxvt.internalBorder: 40
 urxvt.intensityStyles: False
 urxvt.scrollBar: False
@@ -35,7 +36,7 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 *cursorColor:  base03
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0B
+dmenu.selforeground: base0C
 dmenu.foreground: base03
 
 *color0: base00

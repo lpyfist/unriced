@@ -25,38 +25,19 @@ imap <silent> <F3> <C-R>=strftime("%d/%m/%Y, %a %I:%M %p")<CR>
 
 map <silent> <C-x> :vnew <bar> :terminal <CR>A
 
-nnoremap ff :find<space>
-
-map <C-r> :%s/
-
 map <silent><M-g> :Goyo <CR>
 map <silent><M-G> :GitGutterToggle <CR>
 
 map <F4> :w <CR> :!xelatex % && zathura %<.pdf&<CR><CR>
 map <leader>ll :w <CR> :!xelatex % <CR>
 
-tnoremap <Esc> <C-\><C-n>
-
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-u> <C-\><C-N><C-w>h
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-
-inoremap <C-y> <C-\><C-n><C-w>h
-inoremap <C-j> <C-\><C-n><C-w>j
-inoremap <C-k> <C-\><C-n><C-w>k
-inoremap <C-l> <C-\><C-n><C-w>l
-
-nnoremap <C-y> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 map <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
 
 map <silent> <C-h> :noh <CR>
 
 nnoremap <backspace> :<backspace>
+
+nnoremap <silent><leader>aa :ALEToggle<CR>
 
 command! WQ wq
 command! Wq wq
@@ -66,12 +47,13 @@ command! Q q
 autocmd BufNewFile *.tex 0r ~/.config/nvim/templates/temp.tex
 autocmd FileType c setlocal noet tw=80
 autocmd FileType h setlocal noet tw=80
+autocmd FileType help setlocal laststatus=0
 
 set nosol
 set conceallevel=2
 set path=$PWD/**
 set wildmenu
-set laststatus=0
+set laststatus=2
 set splitright
 set tabstop=4
 set noruler
@@ -100,7 +82,7 @@ set statusline+=%4*\ %l
 set statusline+=%2*\ %{&filetype}
 
 hi link User1 User
-hi link User2 Normal
+hi link User2 String
 hi link User3 String
 hi link User4 Folded
 
@@ -126,8 +108,6 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
-
-let g:ghcid_command = 'stack exec ghcid --'
 
 nmap <leader>sp :call <SID>SynStack()<CR>
 function! <SID>SynStack()

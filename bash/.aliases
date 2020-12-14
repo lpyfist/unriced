@@ -11,6 +11,7 @@ alias n=newsboat
 alias svi=sudoedit
 alias colo='pastel color'
 alias bc='bc -l ~/.ext.bc'
+alias csi='rlwrap csi'
 
 # fm
 alias ls='ls --color=auto'
