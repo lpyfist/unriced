@@ -7,7 +7,6 @@ alias pu='doas xbps-install -Su'
 
 # programs
 alias z=zathura
-alias n=newsboat
 alias svi=sudoedit
 alias colo='pastel color'
 alias bc='bc -l ~/.ext.bc'

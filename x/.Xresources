@@ -1,13 +1,13 @@
-*.font:fantasque sans mono:size=11.6:style=regular
-emacs.font: fantasque sans mono:size=18:style=regular
+*.font:hermit:size=11:style=regular
+emacs.font: hermit:size=16:style=regular
 
-urxvt.font: xft:fantasque sans mono:size=12.1:style=regular
+urxvt.font: xft:hermit:size=11:style=medium, xft:symbola:size=11 
 
-urxvt.boldFont: xft:fantasque sans mono:size=12.1:style=bold
-urxvt.italic: xft:fantasque sans mono:size=12.1:style=italic
+urxvt.boldFont: xft:hermit:size=11:style=bold
+urxvt.italic: xft:hermit:size=11:style=italic
 
 /* colors */
-#include "/home/lpy/.themes/lpy"
+#include "/home/lpy/.themes/nyd"
 
 Xft.dpi: 110
 Xft.autohint: 1
@@ -36,7 +36,7 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 *cursorColor:  base03
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0C
+dmenu.selforeground: base0A
 dmenu.foreground: base03
 
 *color0: base00
