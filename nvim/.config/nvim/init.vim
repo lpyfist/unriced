@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'dense-analysis/ale'
  Plug 'tpope/vim-rsi'
  Plug 'nydyrd/rein.vim'
+ Plug 'ctrlpvim/ctrlp.vim'
 
  Plug 'neovimhaskell/haskell-vim'
  Plug 'plasticboy/vim-markdown'
@@ -29,7 +30,7 @@ map <silent><M-g> :Goyo <CR>
 map <silent><M-G> :GitGutterToggle <CR>
 
 map <F4> :w <CR> :!xelatex % && zathura %<.pdf&<CR><CR>
-map <leader>ll :w <CR> :!xelatex % <CR>
+map <leader>ll :w <CR> :!xelatex -shell-escape % <CR>
 
 map <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
 
@@ -49,6 +50,13 @@ autocmd FileType c setlocal noet tw=80
 autocmd FileType h setlocal noet tw=80
 autocmd FileType help setlocal laststatus=0
 
+autocmd FileType scheme
+    \ let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"} |
+    \ execute "syntax keyword scmLambda lambda conceal cchar=λ"
+
+autocmd FileType ocaml
+    \ execute "syntax keyword mlLambda fun conceal cchar=λ"
+
 set nosol
 set conceallevel=2
 set path=$PWD/**
@@ -63,7 +71,11 @@ set shiftwidth=4
 set smarttab
 set smartcase
 set guicursor=
+set bg=dark
 colo rein
+hi EndOfbuffer ctermfg=0 ctermbg=0
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,
+set wildignore+=*.flac,*.mp3
 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -79,12 +91,12 @@ set statusline+=%2*\%{StatuslineGit()}
 set statusline+=%4*\%f
 set statusline+=%=
 set statusline+=%4*\ %l
-set statusline+=%2*\ %{&filetype}
+set statusline+=%3*\ %{&filetype}
 
 hi link User1 User
 hi link User2 String
-hi link User3 String
-hi link User4 Folded
+hi link User3 User2
+hi link User4 Comment
 
 cabbrev he tab help
 iabbrev #i #include
@@ -99,6 +111,7 @@ let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '>'
+let g:gitgutter_enabled = 0
 
 let g:user_emmet_leader_key='<C-z>'
 

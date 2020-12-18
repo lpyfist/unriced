@@ -3,12 +3,13 @@ export EDITOR="/bin/nvim"
 export PASTEL_COLOR_MODE=8bit
 export PERL_DESTRUCT_LEVEL=2
 export HISTSIZE=1000
+export GPG_TTY=$(tty)
 
 # open man pages in nvim
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-PS1="\n\[$(tput setaf 10)\][\[$(tput setaf 8)\]\w\[$(tput setaf 10)\]]\[$(tput sgr0)\] "
+PS1="\n\[$(tput setaf 8)\][\w]\[$(tput sgr0)\] "
 
 cdl() {
     cd "$@" && ls --color=auto

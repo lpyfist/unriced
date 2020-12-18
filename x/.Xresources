@@ -1,13 +1,13 @@
-*.font:hermit:size=11:style=regular
-emacs.font: hermit:size=16:style=regular
+*.font:go mono:size=11:style=medium
+emacs.font: go mono:size=16:style=regular
 
-urxvt.font: xft:hermit:size=11:style=medium, xft:symbola:size=11 
+urxvt.font: xft:go mono:size=11.1:style=regular, xft:symbola:size=11 
 
-urxvt.boldFont: xft:hermit:size=11:style=bold
-urxvt.italic: xft:hermit:size=11:style=italic
+urxvt.boldFont: xft:go mono:size=11.1:style=bold
+urxvt.italic: xft:go mono:size=11.1:style=italic
 
 /* colors */
-#include "/home/lpy/.themes/nyd"
+#include "/home/lpy/.themes/lakeside"
 
 Xft.dpi: 110
 Xft.autohint: 1
@@ -33,10 +33,10 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 
 *foreground:   base05
 *background:   base00
-*cursorColor:  base03
+*cursorColor:  base05
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0A
+dmenu.selforeground: base0B
 dmenu.foreground: base03
 
 *color0: base00
