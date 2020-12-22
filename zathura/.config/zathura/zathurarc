@@ -16,7 +16,7 @@ map [fullscreen] <C-i> jumplist forward
 
 map [index] q quit
 
-set font "input 10"
+set font "go mono 11"
 
 # colors
 set default-bg  "#ffffff"
@@ -29,7 +29,7 @@ set inputbar-fg "#0f0f0f"
 
 set index-bg "#fafafa"
 set index-fg "#676767"
-set index-active-bg "#383838"
+set index-active-bg "#257fad"
 set index-active-fg "#ffffff"
 
 set completion-highlight-fg "#0f0f0f"

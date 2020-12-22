@@ -22,10 +22,6 @@ call plug#end()
 filetype plugin indent on
 set clipboard+=unnamedplus
 
-imap <silent> <F3> <C-R>=strftime("%d/%m/%Y, %a %I:%M %p")<CR>
-
-map <silent> <C-x> :vnew <bar> :terminal <CR>A
-
 map <silent><M-g> :Goyo <CR>
 map <silent><M-G> :GitGutterToggle <CR>
 
@@ -54,6 +50,9 @@ autocmd FileType scheme
     \ let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"} |
     \ execute "syntax keyword scmLambda lambda conceal cchar=λ"
 
+autocmd FileType haskell
+    \ execute "syntax match haskLambda /\\\\/ conceal cchar=λ"
+
 autocmd FileType ocaml
     \ execute "syntax keyword mlLambda fun conceal cchar=λ"
 
@@ -72,11 +71,12 @@ set smarttab
 set smartcase
 set guicursor=
 set bg=dark
-colo rein
-hi EndOfbuffer ctermfg=0 ctermbg=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,
 set wildignore+=*.flac,*.mp3
 
+colo rein
+
+" statusline stuff
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunc
@@ -97,6 +97,8 @@ hi link User1 User
 hi link User2 String
 hi link User3 User2
 hi link User4 Comment
+
+hi EndOfbuffer ctermfg=0 ctermbg=0
 
 cabbrev he tab help
 iabbrev #i #include

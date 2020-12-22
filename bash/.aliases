@@ -14,7 +14,6 @@ alias csi='rlwrap csi'
 
 # fm
 alias ls='ls --color=auto'
-alias cd='cdl'
 
 # power
 alias poweroff='doas poweroff'

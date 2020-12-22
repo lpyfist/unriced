@@ -1,13 +1,13 @@
-*.font:go mono:size=11:style=medium
-emacs.font: go mono:size=16:style=regular
+*.font:go mono:size=11:style=regular
+emacs.font: go mono:size=17:style=regular
 
-urxvt.font: xft:go mono:size=11.1:style=regular, xft:symbola:size=11 
+urxvt.font: xft:go mono:size=11.2:style=regular, xft:symbola:size=11 
 
-urxvt.boldFont: xft:go mono:size=11.1:style=bold
-urxvt.italic: xft:go mono:size=11.1:style=italic
+urxvt.boldFont: xft:go mono:size=11.3:style=bold
+urxvt.italic: xft:go mono:size=11.3:style=italic
 
 /* colors */
-#include "/home/lpy/.themes/lakeside"
+#include "/home/lpy/.themes/seashell"
 
 Xft.dpi: 110
 Xft.autohint: 1
@@ -36,7 +36,7 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 *cursorColor:  base05
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0B
+dmenu.selforeground: base0D
 dmenu.foreground: base03
 
 *color0: base00

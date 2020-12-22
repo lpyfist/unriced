@@ -9,11 +9,7 @@ export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-PS1="\n\[$(tput setaf 8)\][\w]\[$(tput sgr0)\] "
-
-cdl() {
-    cd "$@" && ls --color=auto
-}
+PS1="\n\[$(tput setaf 8)\]\w\n\[$(tput setaf 2)\]Λ \[$(tput sgr0)\]"
 
 shopt -s \
     autocd \
