@@ -1,7 +1,7 @@
 *.font:go mono:size=11:style=regular
 emacs.font: go mono:size=17:style=regular
 
-urxvt.font: xft:go mono:size=11.2:style=regular, xft:symbola:size=11 
+urxvt.font: xft:go mono:size=11.3:style=regular, xft:symbola:size=11
 
 urxvt.boldFont: xft:go mono:size=11.3:style=bold
 urxvt.italic: xft:go mono:size=11.3:style=italic
@@ -25,7 +25,12 @@ urxvt.intensityStyles: False
 urxvt.scrollBar: False
 urxvt.cursorBlink: True
 urxvt.cursorUnderline: True
-URxvt.perl-ext-common: default,clipboard
+URxvt.perl-ext-common: default,clipboard,font-size
+
+URxvt.keysym.M-K:     font-size:increase
+URxvt.keysym.M-J:     font-size:decrease
+URxvt.keysym.M-plus: font-size:reset
+URxvt.keysym.M-slash: font-size:show
 
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-v: eval:paste_clipboard
@@ -36,7 +41,7 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 *cursorColor:  base05
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0D
+dmenu.selforeground: base0B
 dmenu.foreground: base03
 
 *color0: base00

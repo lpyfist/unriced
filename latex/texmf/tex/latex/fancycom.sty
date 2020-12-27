@@ -1,0 +1,318 @@
+% LaTeX package providing some shorthands and quick commands, tailored to certain unspecified fields of maths.
+% Originally written by Adam Walsh, somewhat modified for personal use.
+
+\ProvidesPackage{fancycom}
+
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+
+\RequirePackage{cancel}
+
+\RequirePackage{mathtools}
+
+\RequirePackage{calc}
+\RequirePackage{textcomp}
+\RequirePackage[nointegrals]{wasysym}
+\RequirePackage{xparse}
+\RequirePackage{fullpage}
+
+\RequirePackage{mathspec}
+\RequirePackage{dsfont}
+\RequirePackage{ebgaramond-maths}
+%\RequirePackage{mathrsfs}
+
+\RequirePackage{tikz-cd}
+
+%Textual shortcuts/aids
+    \newcommand{\mbb}[1]{\mathds{#1}} %Emblacken your symbols!
+    \newcommand{\mbf}[1]{\mathbf{#1}} %Embolden your symbols!
+    \newcommand{\mfk}[1]{\mathfrak{#1}} %Enfraken your symbols!
+    \newcommand{\bsl}{\backslash} %Backslash
+    \newcommand{\cndall}{\,\,\,\forall} %forall given as condition
+    \newcommand{\st}{\,\mid\,}  %Such that symbol. : is also used.
+    \newcommand{\what}[1]{& \qquad &\begin{sloppy}\textit{\small\mbox{#1}\small}\end{sloppy}} %Little comment for an align block. Memento of 2007.
+
+%Basic symbol extensions
+    \def\bbN{\mathds{N}}
+    \def\bbC{\mathds{C}}
+    \def\bbR{\mathds{R}}
+    \def\bbQ{\mathds{Q}}
+    \def\bbZ{\mathds{Z}}
+
+
+    \def\bA{\mathds{A}}
+    \def\bF{\mathds{F}}
+    \def\bN{\mathds{N}}
+    \def\bR{\mathds{R}}
+    \def\bZ{\mathds{Z}}
+    \def\bQ{\mathds{Q}}
+    \def\bC{\mathds{C}}
+    \def\bO{\mathds{O}}
+    \def\bP{\mathds{P}}
+    \def\bS{\mathds{S}}
+    \def\fR{\mathfrk{R}}
+    \def\fZ{\mathfrk{Z}}
+    \def\fQ{\mathfrk{Q}}
+    \def\fC{\mathfrk{C}}
+    \def\fO{\mathfrk{O}}
+    \def\sC{\mathscr{C}}
+    \def\sD{\mathscr{D}}
+    \def\sP{\mathscr{P}}
+    \def\sF{\mathscr{F}}
+    \def\sH{\mathscr{H}}
+    \def\sM{\mathscr{M}}
+    \def\sT{\mathscr{T}}
+    \def\cA{\mathcal{A}}
+    \def\cB{\mathcal{B}}
+    \def\cO{\mathcal{O}}
+    \def\cF{\mathcal{F}}
+    \def\cG{\mathcal{G}}
+    \def\cC{\mathcal{C}}
+    \def\cD{\mathcal{D}}
+    \def\cT{\mathcal{T}}
+    \def\cP{\mathcal{P}}
+    \def\cS{\mathcal{S}}
+    
+    \def\bfz{\mathbf{0}}
+    
+    \def\fkp{\mathfrak{p}}
+    \def\fkq{\mathfrak{q}}
+    \def\fkm{\mathfrak{m}}
+
+
+%Symbol abbreviations
+    \def\lm{\lambda}
+    \def\eps{\epsilon}
+    \def\veps{\varepsilon}
+    \def\vphi{\varphi}
+    
+    \def\rmd{\mathrm{d}}
+    
+    \def\ot{\otimes}
+    \def\ptl{\partial}
+    \def\bdry{\partial}
+
+    \def\nin{\not\in}
+    
+    \newcommand{\isom}{\cong} %Isomorphism
+    \newcommand{\ceq}{\coloneqq} %Defined to be equal to
+    \newcommand{\eqc}{\eqqcolon} %Equal to be defined to
+    \newcommand{\ra}{\rangle} %Right angle bracket
+    \newcommand{\la}{\langle} %Left angle bracket
+    \newcommand{\wto}{\rightharpoonup} %Weak convergence, or just an arrow with the bottom half missing
+    \renewcommand{\to}{\longrightarrow} %A long right arrow, for functions and such
+    \newcommand{\lmto}{\longmapsto} %A right arrow with a vertical tail, for mapping definitions
+    \newcommand{\llim}{\lim\limits} %limit set up so that it always writes the limits underneath
+
+    \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+
+%Function constructors
+    \newcommand{\func}[3]{#1\colon#2\to #3} %Generic function definition without mapping
+    \newcommand{\mfunc}[3]{#1\colon#2\mapsto #3} %Generic function definition with only mapping
+    \newcommand{\afunc}[3]{#1\colon#2&\to #3} %Generic function with alignment on arrow
+    \newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto #5} %Generic function definition with mapping
+    \newcommand{\vafunc}[5]{\afunc{#1}{#2}{#3}\\#4&\longmapsto #5} %Generic function over two lines aligned on arrow
+
+
+%More complex operator constructors
+    \DeclareDocumentCommand\amod{ m g g }
+    {%
+      \IfNoValueTF{#2}
+      {%
+        \pmod{#1}
+      }{%
+        \IfNoValueTF{#3}
+        {%
+          {#1}\pmod{#2}
+        }{%
+          {#1} \,\equiv\, #2\pmod{#3}
+        }
+      }
+    }
+
+    \DeclareDocumentCommand\ppp{ m g }
+    {%
+      \IfNoValueTF{#2}
+      {%
+        \frac{\partial}{\partial #1}
+      }{%
+        \frac{\partial #1}{\partial #2}
+      }
+    }
+
+    \newcommand{\pp}[1]{\frac{\partial}{\partial #1}}
+
+
+%For theorems and proofs
+
+    \newtheorem{Theorem}{Theorem}
+    \newtheorem{Proposition}{Theorem}
+    \newtheorem{Conjecture}[Theorem]{Conjecture}
+    \newtheorem{Lemma}[Theorem]{Lemma}
+    \newtheorem{Corollary}[Theorem]{Corollary}
+
+\theoremstyle{definition}
+    \newtheorem{Example}{Example}
+    \newtheorem{Note}{Note}
+    \newtheorem{Question}{Question}
+    \newtheorem{Remark}{Remark}
+
+\theoremstyle{definition}
+    \newtheorem{Result}[Theorem]{Result}
+    \newtheorem{Definition}[Theorem]{Definition}
+    %Shorthands
+    \DeclareDocumentCommand\sdef{m}{\begin{Definition}#1\end{Definition}}
+    \DeclareDocumentCommand\sex{m}{\begin{Example}#1\end{Example}}
+    \DeclareDocumentCommand\snote{m}{\begin{Note}#1\end{Note}}
+    \DeclareDocumentCommand\slem{m}{\begin{Lemma}#1\end{Lemma}}
+    \DeclareDocumentCommand\sresult{m}{\begin{Result}#1\end{Result}}
+    \DeclareDocumentCommand\sres{m}{\begin{Result}#1\end{Result}}
+    \DeclareDocumentCommand\sques{m}{\begin{Question}#1\end{Question}}
+    \DeclareDocumentCommand\srem{m}{\begin{Remark}#1\end{Remark}}
+
+
+
+%Mathematical Operators
+    \DeclareMathOperator{\Ell}{Ell} %Elliptic genera
+    \DeclareMathOperator{\id}{id}
+    \DeclareMathOperator{\Id}{id}
+    \DeclareMathOperator{\Set}{\mathscr{S}et}
+    \DeclareMathOperator{\Hom}{\mathscr{H}om}
+    \DeclareMathOperator{\Top}{\mathscr{T}op}
+    \DeclareMathOperator{\Mod}{\mathbf{Mod}}
+    \DeclareMathOperator{\Comm}{\mathbf{Comm}}
+    \DeclareMathOperator{\Grp}{\mathbf{Grp}}
+    \DeclareMathOperator{\GL}{GL}
+    \DeclareMathOperator{\Obj}{Obj}
+    \DeclareMathOperator{\Spec}{Spec}
+    \DeclareMathOperator{\Specm}{Specm}
+    \DeclareMathOperator{\Min}{min}
+    \DeclareMathOperator{\Ker}{Ker}
+    \DeclareMathOperator{\im}{Im}
+    \DeclareMathOperator{\CoIm}{CoIm}
+    \DeclareMathOperator{\CoKer}{CoKer}
+    \DeclareMathOperator{\Der}{Der}
+    \DeclareMathOperator{\End}{End}
+    
+    
+% Brackets and braces
+    \DeclareDocumentCommand\braces{}{{\ifnum\z@=`}\fi\@braces}
+    \DeclareDocumentCommand\@braces{ s t\big t\Big t\bigg t\Bigg m m m }
+    { % General braces with automatic and manual sizing
+    	\IfBooleanTF{#1}
+    	{\left#6\smash{#8}\right#7\vphantom{#8}}
+    	{
+    		\IfBooleanTF{#2}{\bigl#6{#8}\bigr#7}{
+    			\IfBooleanTF{#3}{\Bigl#6{#8}\Bigr#7}{
+    				\IfBooleanTF{#4}{\biggl#6{#8}\biggr#7}{
+    					\IfBooleanTF{#5}{\Biggl#6{#8}\Biggr#7}{\left#6{#8}\right#7}
+    				}
+    			}
+    		}
+    	}
+    	\ifnum\z@=`{\fi}
+    }
+
+
+    \DeclareDocumentCommand\quantity{}{{\ifnum\z@=`}\fi\@quantity}
+    \DeclareDocumentCommand\@quantity{ t\big t\Big t\bigg t\Bigg g o d() d|| }
+    { % Flexible automatic bracketing of an expression in () or [] or {} or ||
+    	% Handles manual override of sizing
+    	\IfBooleanTF{#1}{\let\ltag\bigl \let\rtag\bigr}{
+    		\IfBooleanTF{#2}{\let\ltag\Bigl \let\rtag\Bigr}{
+    			\IfBooleanTF{#3}{\let\ltag\biggl \let\rtag\biggr}{
+    				\IfBooleanTF{#4}
+    				{\let\ltag\Biggl \let\rtag\Biggr}
+    				{\let\ltag\left \let\rtag\right}
+    			}
+    		}
+    	}
+    	% Handles actual bracketing
+    	\IfNoValueTF{#5}{
+    		\IfNoValueTF{#6}{
+    			\IfNoValueTF{#7}{
+    				\IfNoValueTF{#8}
+    				{()}
+    				{\ltag\lvert{#8}\rtag\rvert}
+    			}
+    			{\ltag(#7\rtag) \IfNoValueTF{#8}{}{|#8|}}
+    		}
+    		{\ltag[#6\rtag] \IfNoValueTF{#7}{}{(#7)} \IfNoValueTF{#8}{}{|#8|}}
+    	}
+    	{\ltag\lbrace#5\rtag\rbrace  \IfNoValueTF{#6}{}{[#6]} \IfNoValueTF{#7}{}{(#7)} \IfNoValueTF{#8}{}{|#8|}}
+    	\ifnum\z@=`{\fi}
+    }
+    \DeclareDocumentCommand\qty{}{\quantity} % Shorthand for \quantity
+    \DeclareDocumentCommand\pqty{ l m }{\braces#1{\lparen}{\rparen}{#2}}
+    \DeclareDocumentCommand\bqty{ l m }{\braces#1{\lbrack}{\rbrack}{#2}}
+    \DeclareDocumentCommand\Bqty{ l m }{\braces#1{\lbrace}{\rbrace}{#2}}
+    \DeclareDocumentCommand\vqty{ l m }{\braces#1{\lvert}{\rvert}{#2}}
+
+%Matrix constructors
+\DeclareDocumentCommand\pmqty{m}{\begin{pmatrix}#1\end{pmatrix}}
+\DeclareDocumentCommand\Pmqty{m}{\left\lgroup\begin{matrix}#1\end{matrix}\right\rgroup}
+\DeclareDocumentCommand\bmqty{m}{\begin{bmatrix}#1\end{bmatrix}}
+\DeclareDocumentCommand\Bmqty{m}{\begin{Bmatrix}#1\end{Bmatrix}}
+\DeclareDocumentCommand\sbmqty{m}{\left[\begin{smallmatrix}#1\end{smallmatrix}\right]}
+\DeclareDocumentCommand\vmqty{m}{\begin{vmatrix}#1\end{vmatrix}}
+\DeclareDocumentCommand\matrixquantity{}{{\ifnum\z@=`}\fi\@matrixquantity}
+\DeclareDocumentCommand\@matrixquantity{ s g o d() d|| }
+{
+	\mathord{
+	\IfNoValueTF{#2}
+	{
+		\IfNoValueTF{#3}
+		{
+			\IfNoValueTF{#4}
+			{
+				\IfNoValueTF{#5}
+				{()}
+				{\vmqty{#5}}
+			}
+			{
+				\IfBooleanTF{#1}
+				{\Pmqty{#4}}
+				{\pmqty{#4}}
+				\IfNoValueTF{#5}{}{|#5|}
+			}
+		}
+		{\bmqty{#3} \IfNoValueTF{#4}{}{(#4)} \IfNoValueTF{#5}{}{|#5|}}
+	}
+	{\begin{matrix}#2\end{matrix} \IfNoValueTF{#3}{}{[#3]} \IfNoValueTF{#4}{}{(#4)} \IfNoValueTF{#5}{}{|#5|}}
+	}
+	\ifnum\z@=`{\fi}
+}
+\DeclareDocumentCommand\mqty{}{\matrixquantity} % Shorthand for \matrixquantity
+\DeclareDocumentCommand\matrixdeterminant{m}{\vmqty{#1}} % Matrix determinant
+\DeclareDocumentCommand\mdet{}{\matrixdeterminant} % Shorthand for matrix determinant
+
+
+% Quick quad text (math-mode text with \quad spacing)
+    \DeclareDocumentCommand\qqtext{ s m }{\IfBooleanTF{#1}{}{\quad}\text{#2}\quad}
+    \DeclareDocumentCommand\qq{}{\qqtext}
+    
+    \DeclareDocumentCommand\qcomma{}{,\quad}
+    \DeclareDocumentCommand\qc{}{\qcomma}
+    
+    \DeclareDocumentCommand\qif{s}{\IfBooleanTF{#1}{}{\quad}\text{if}\quad}
+    \DeclareDocumentCommand\qthen{s}{\IfBooleanTF{#1}{}{\quad}\text{then}\quad}
+    \DeclareDocumentCommand\qelse{s}{\IfBooleanTF{#1}{}{\quad}\text{else}\quad}
+    \DeclareDocumentCommand\qotherwise{s}{\IfBooleanTF{#1}{}{\quad}\text{otherwise}\quad}
+    \DeclareDocumentCommand\qunless{s}{\IfBooleanTF{#1}{}{\quad}\text{unless}\quad}
+    \DeclareDocumentCommand\qgiven{s}{\IfBooleanTF{#1}{}{\quad}\text{given}\quad}
+    \DeclareDocumentCommand\qusing{s}{\IfBooleanTF{#1}{}{\quad}\text{using}\quad}
+    \DeclareDocumentCommand\qassume{s}{\IfBooleanTF{#1}{}{\quad}\text{assume}\quad}
+    \DeclareDocumentCommand\qsince{s}{\IfBooleanTF{#1}{}{\quad}\text{since}\quad}
+    \DeclareDocumentCommand\qlet{s}{\IfBooleanTF{#1}{}{\quad}\text{let}\quad}
+    \DeclareDocumentCommand\qfor{s}{\IfBooleanTF{#1}{}{\quad}\text{for}\quad}
+    \DeclareDocumentCommand\qall{s}{\IfBooleanTF{#1}{}{\quad}\text{all}\quad}
+    \DeclareDocumentCommand\qeven{s}{\IfBooleanTF{#1}{}{\quad}\text{even}\quad}
+    \DeclareDocumentCommand\qodd{s}{\IfBooleanTF{#1}{}{\quad}\text{odd}\quad}
+    \DeclareDocumentCommand\qinteger{s}{\IfBooleanTF{#1}{}{\quad}\text{integer}\quad}
+    \DeclareDocumentCommand\qand{s}{\IfBooleanTF{#1}{}{\quad}\text{and}\quad}
+    \DeclareDocumentCommand\qor{s}{\IfBooleanTF{#1}{}{\quad}\text{or}\quad}
+    \DeclareDocumentCommand\qas{s}{\IfBooleanTF{#1}{}{\quad}\text{as}\quad}
+    \DeclareDocumentCommand\qin{s}{\IfBooleanTF{#1}{}{\quad}\text{in}\quad}
+    \DeclareDocumentCommand\qcc{s}{\IfBooleanTF{#1}{}{\quad}\text{c.c.}\quad}

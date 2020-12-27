@@ -1,5 +1,4 @@
 set adjust-open best-fit
-set guioptions no
 set selection-clipboard clipboard
 
 map [fullscreen] a adjust_window best-fit
@@ -21,8 +20,8 @@ set font "go mono 11"
 # colors
 set default-bg  "#ffffff"
 
-set statusbar-fg "#0f0f0f"
-set statusbar-bg "#fafafa"
+set statusbar-fg "#ffffff"
+set statusbar-bg "#568c3b"
 
 set inputbar-bg "#fafafa"
 set inputbar-fg "#0f0f0f"

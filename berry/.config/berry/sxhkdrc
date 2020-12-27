@@ -10,6 +10,10 @@ super + Return
 super + d
     dmenu_run -l 15
 
+# docs
+alt + l
+    /home/lpy/bin/les
+
 # info script
 super +i
     /home/lpy/bin/inf

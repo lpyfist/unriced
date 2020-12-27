@@ -10,11 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'dense-analysis/ale'
  Plug 'tpope/vim-rsi'
  Plug 'nydyrd/rein.vim'
- Plug 'ctrlpvim/ctrlp.vim'
 
  Plug 'neovimhaskell/haskell-vim'
  Plug 'plasticboy/vim-markdown'
- Plug 'lluchs/vim-wren'
  Plug 'zah/nim.vim'
  Plug 'LnL7/vim-nix'
 call plug#end()
@@ -41,7 +39,7 @@ command! Wq wq
 command! W w
 command! Q q
 
-autocmd BufNewFile *.tex 0r ~/.config/nvim/templates/temp.tex
+autocmd BufNewFile *tex 0r ~/.config/nvim/templates/temp.tex
 autocmd FileType c setlocal noet tw=80
 autocmd FileType h setlocal noet tw=80
 autocmd FileType help setlocal laststatus=0

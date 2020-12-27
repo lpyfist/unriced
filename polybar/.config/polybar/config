@@ -2,7 +2,7 @@
 background = ${xrdb:color0}
 foreground = ${xrdb:color7}
 dim = ${xrdb:color10}
-primary = ${xrdb:color4}
+primary = ${xrdb:color2}
 secondary = ${xrdb:color2}
 alert = ${xrdb:color1}
 

@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# lol
+# browse/open docs
 
 base="/home/lpy/docs"
-out="$(find "$base/$1" | sort | dmenu -l 15)"
+out="$(find "$base/$1" | grep 'pdf\|epub\|djvu' | sort | dmenu -l 15)"
 
 [ -z "$out" ] || zathura "$out"
