@@ -1,15 +1,14 @@
-*.font:go mono:size=11:style=regular
-emacs.font: go mono:size=17:style=regular
+*.font:iosevka hopf:size=12:style=regular
+emacs.font: iosevka hopf:size=18:style=regular
 
-urxvt.font: xft:go mono:size=11.3:style=regular, xft:symbola:size=11
-
-urxvt.boldFont: xft:go mono:size=11.3:style=bold
-urxvt.italic: xft:go mono:size=11.3:style=italic
+urxvt.font: xft:iosevka hopf:size=12:style=medium, xft:symbola:size=12
+urxvt.italicFont: xft:iosevka hopf:size=12:style=italic
+urxvt.boldFont: xft:iosevka hopf:size=12:style=bold
 
 /* colors */
-#include "/home/lpy/.themes/seashell"
+#include "/home/lpy/.themes/nyd"
 
-Xft.dpi: 110
+Xft.dpi: 115
 Xft.autohint: 1
 Xft.antialias: 1
 Xft.hinting: true
@@ -41,7 +40,7 @@ URxvt.keysym.M-c: eval:selection_to_clipboard
 *cursorColor:  base05
 
 dmenu.selbackground: base00
-dmenu.selforeground: base0B
+dmenu.selforeground: base0C
 dmenu.foreground: base03
 
 *color0: base00

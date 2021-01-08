@@ -10,8 +10,6 @@ setxkbmap -option compose:rctrl
 sxhkd -c "$HOME/.config/berry/sxhkdrc" &
 
 ~/.fehbg &
-picom &
-
 urxvtd -q -o &
 
 # xidle -program "/home/lpy/bin/lock" -timeout 9000

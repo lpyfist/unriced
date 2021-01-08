@@ -15,13 +15,13 @@ map [fullscreen] <C-i> jumplist forward
 
 map [index] q quit
 
-set font "go mono 11"
+set font "iosevka hopf 11"
 
 # colors
 set default-bg  "#ffffff"
 
 set statusbar-fg "#ffffff"
-set statusbar-bg "#568c3b"
+set statusbar-bg "#257fad"
 
 set inputbar-bg "#fafafa"
 set inputbar-fg "#0f0f0f"

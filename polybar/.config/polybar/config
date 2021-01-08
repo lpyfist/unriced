@@ -2,7 +2,7 @@
 background = ${xrdb:color0}
 foreground = ${xrdb:color7}
 dim = ${xrdb:color10}
-primary = ${xrdb:color2}
+primary = ${xrdb:color6}
 secondary = ${xrdb:color2}
 alert = ${xrdb:color1}
 
@@ -19,7 +19,7 @@ module-margin = 15
 background =  ${colors.background}
 foreground =  ${colors.foreground}
 
-border-size = 2
+border-size = 1
 border-color = ${colors.dim}
 
 padding-left = 2
@@ -56,7 +56,7 @@ label-empty-foreground = ${xrdb:color10}
 label-empty-background = ${colors.background}
 label-empty-padding = 1
 
-label-urgent = ~
+label-urgent = ×
 label-urgent-foreground = ${colors.alert}
 label-urgent-background = ${colors.background}
 label-urgent-padding = 1

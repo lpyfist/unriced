@@ -9,8 +9,8 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'godlygeek/tabular'
  Plug 'dense-analysis/ale'
  Plug 'tpope/vim-rsi'
- Plug 'nydyrd/rein.vim'
 
+ Plug 'whonore/Coqtail'
  Plug 'neovimhaskell/haskell-vim'
  Plug 'plasticboy/vim-markdown'
  Plug 'zah/nim.vim'

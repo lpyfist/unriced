@@ -11,7 +11,7 @@ super + d
     dmenu_run -l 15
 
 # docs
-alt + l
+alt + i
     /home/lpy/bin/les
 
 # info script
